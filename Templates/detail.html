@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block tittle %} August.blog {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-9">
+            {% for details in detail %}
+
+            <div class="card mb-4 mt-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ details.post_title}}</h2>
+                    <p class="card-text" style="color:black">{{ details.post_body }}</p>
+                </div>
+                <div class="card-footer text-muted">
+                    posted on {{ details.post_date }}
+                    <span class="text-info mr-2">{{ details.post_author }}</span>
+                </div>
+            </div>
+            {% endfor %}
+            {% if is_paginated %}
+            <ul class="pagination justify-content-center mb-4">
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&larr; Previous Page</a>
+                </li>
+                {% endif %}
+
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a href="?page={{ page_obj.next_page_number }}" class="page-link"> Next Page &rarr;</a>
+                </li>
+                {% endif %}
+            </ul>
+            {% endif %}
+
+        </div>
+    </div>
+
+{% endblock %}

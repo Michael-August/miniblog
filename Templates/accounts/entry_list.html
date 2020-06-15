@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block tittle %} August.blog {% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row" id="body">
+        <div class="col-12 main">
+            <main class="body welcome text-center">
+                <h1 class="heading">AugustBlog</h1>
+                <p class="text">welcome to this blog. You are Assured of the quality of news you get here. We give provide you with latest news based on
+                    your enviroment and favourite type of news. Sports news, fasion news, politics, relationship gist and lots more. Yet to register, hit
+                    the <a href="{% url 'register' %}">Register</a> button for more news.<br><br>
+                    <a href="{% url 'register' %}"><button class="btn btn-primary btn-lg" id="reg">Register</button></a>
+                    <a href="{% url 'login' %}"><button class="btn btn-lg btn-outline-secondary" style="color: black;">Log in</button></a>
+                </p>
+                <p>
+
+                    <!-- <a href="#"><button class="btn btn-primary">Register</button></a>
+                    <a href="#"><button class="btn btn-default">Log in</button></a> -->
+                </p>
+            </main>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-9">
+            {% for post in posts %}
+
+            <div class="card mb-4 mt-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.post_title}}</h2>
+                    <p class="card-text" style="color:black">{{post.post_body | truncatechars:200 }}</p>
+                    <a href="{% url 'login' %}" class="btn btn-primary btn-sm">Read More &rarr;</a>
+                </div>
+                <div class="card-footer text-muted">
+                    posted on {{ post.post_date }}
+                    <span class="text-info mr-2">{{ post.post_author }}</span>
+                </div>
+            </div>
+            {% endfor %}
+            {% if is_paginated %}
+            <ul class="pagination justify-content-center mb-4">
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&larr; Previous Page</a>
+                </li>
+                {% endif %}
+
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a href="?page={{ page_obj.next_page_number }}" class="page-link"> Next Page &rarr;</a>
+                </li>
+                {% endif %}
+            </ul>
+            {% endif %}
+
+            {% if user.is_authenticated %}
+            <div class="card mb-4 mt-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.post_title}}</h2>
+                    <p class="card-text" style="color:black">{{post.post_body }}</p>
+<!--                    <a href="{% url 'login' %}" class="btn btn-primary btn-sm">Read More &rarr;</a>-->
+                </div>
+                <div class="card-footer text-muted">
+                    posted on {{ post.post_date }}
+                    <span class="text-info mr-2">{{ post.post_author }}</span>
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

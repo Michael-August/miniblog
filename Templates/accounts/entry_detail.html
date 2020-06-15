@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block tittle %} August.blog {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-9">
+            <a href="{% url 'home' %}">Back to home</a>
+            <div class="card mb-4 mt-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ object.post_title}}</h2>
+                    <p class="card-text" style="color:black">{{object.post_body | linebreaks }}</p>
+                </div>
+                <div class="card-footer text-muted">
+                    posted on {{ object.post_date }} by
+                    <span class="text-info mr-2">{{ object.post_author }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

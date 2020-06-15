@@ -1,0 +1,145 @@
+.logo{
+    color: rgb(238, 190, 101);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.link{
+    text-decoration:none;
+    color: goldenrod;
+    font-size: larger;
+}
+.list-item{
+    list-style-type:none;
+    margin-top: 30px;
+    float: left;
+    clear: both;
+}
+#home{
+    list-style-type:none;
+    margin-top: 30px;
+    float: left;
+    clear: both;
+    font-size: large;
+}
+#news{
+    list-style-type:none;
+    float: left;
+    clear: both;
+    margin-left: 100px;
+    margin-top: -57px;
+    font-size: large;
+}
+a:hover{
+    text-decoration: none;
+    /* font-size: x-large; */
+    color: gold;
+    transition: ease-in-out;
+    transition: 0.3s;
+}
+/* a:visited{
+    color: chocolate;
+} */
+#register{
+    float: right;
+    clear: both;
+    margin-top: -70px;
+    margin-right: 100px;
+    font-size: large;
+
+}
+#login{
+    float: right;
+    clear: both;
+    margin-top: -70px;
+    font-size: large;
+}
+.begin{
+    background: rgb(63, 63, 78);
+}
+.heading{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 100;
+    color: rgb(238, 190, 101);
+}
+.text{
+    font-size: x-large;
+}
+.main{
+    margin: 60px;
+}
+#body{
+    margin: 0px;
+    margin-top: 1px;
+    margin-left: -20px;
+    margin-right: -15px;
+    height: 550px;
+    background-image: url("home.jpg");
+
+}
+.text{
+    margin: 150;
+    color: whitesmoke;
+}
+#reg{
+    background: rgb(63, 63, 78);
+}
+#full{
+    background-image: url("login.jpg");
+    height: 600px;
+
+}
+#form{
+    width: 400;
+    padding: 10px;
+    border-radius: 5px;
+}
+.login{
+    margin-top: 150px;
+    border: 1px solid chocolate;
+    width: 500;
+    padding: 50px;
+    box-shadow: 2px 2px 2px 2px;
+    /* border: none; */
+    /* background: transparent; */
+}
+p{
+    color: whitesmoke;
+}
+#whole{
+    background-image: url("register.jpg");
+}
+.form{
+    width: 500;
+    padding: 10px;
+    border-radius: 5px;
+}
+.register{
+    margin-top: 100px;
+    border: 2px solid;
+    width: 650;
+    padding: 50px;
+    box-shadow: 0px 5px 5px 2px;
+    border: none;
+    /* background: transparent; */
+}
+#logout{
+    float: right;
+    clear: both;
+    margin-top: -70px;
+    margin-right: 100px;
+    font-size: large;
+}
+#name{
+    float: right;
+    clear: both;
+    margin-top: -70px;
+    margin-right: 500px;
+    font-size: large;
+    color: brown;
+}
+#post{
+    float: right;
+    clear: both;
+    margin-top: -70px;
+    margin-right: 500px;
+    font-size: large;
+}
